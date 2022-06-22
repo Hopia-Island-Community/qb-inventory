@@ -1501,14 +1501,14 @@ QBCore.Commands.Add("giveitem", "Give An Item (Admin Only)", {{name="id", help="
 			if itemData then
 				-- check iteminfo
 				local info = {}
-				if itemData["name"] == "id_card" then
+				if itemData["name"] == "idcard" then
 					info.citizenid = Player.PlayerData.citizenid
 					info.firstname = Player.PlayerData.charinfo.firstname
 					info.lastname = Player.PlayerData.charinfo.lastname
 					info.birthdate = Player.PlayerData.charinfo.birthdate
 					info.gender = Player.PlayerData.charinfo.gender
 					info.nationality = Player.PlayerData.charinfo.nationality
-				elseif itemData["name"] == "driver_license" then
+				elseif itemData["name"] == "driverlicense" then
 					info.firstname = Player.PlayerData.charinfo.firstname
 					info.lastname = Player.PlayerData.charinfo.lastname
 					info.birthdate = Player.PlayerData.charinfo.birthdate
@@ -1573,52 +1573,52 @@ QBCore.Functions.CreateUseableItem("snowball", function(source, item)
     end
 end)
 
-QBCore.Functions.CreateUseableItem("driver_license", function(source, item)
-	local PlayerPed = GetPlayerPed(source)
-	local PlayerCoords = GetEntityCoords(PlayerPed)
-	for k, v in pairs(QBCore.Functions.GetPlayers()) do
-		local TargetPed = GetPlayerPed(v)
-		local dist = #(PlayerCoords - GetEntityCoords(TargetPed))
-		if dist < 3.0 then
-			TriggerClientEvent('chat:addMessage', v,  {
-					template = '<div class="chat-message advert"><div class="chat-message-body"><strong>{0}:</strong><br><br> <strong>First Name:</strong> {1} <br><strong>Last Name:</strong> {2} <br><strong>Birth Date:</strong> {3} <br><strong>Licenses:</strong> {4}</div></div>',
-					args = {
-						"Drivers License",
-						item.info.firstname,
-						item.info.lastname,
-						item.info.birthdate,
-						item.info.type
-					}
-				}
-			)
-		end
-	end
-end)
+--QBCore.Functions.CreateUseableItem("driver_license", function(source, item)
+--	local PlayerPed = GetPlayerPed(source)
+--	local PlayerCoords = GetEntityCoords(PlayerPed)
+--	for k, v in pairs(QBCore.Functions.GetPlayers()) do
+--		local TargetPed = GetPlayerPed(v)
+--		local dist = #(PlayerCoords - GetEntityCoords(TargetPed))
+--		if dist < 3.0 then
+--			TriggerClientEvent('chat:addMessage', v,  {
+--					template = '<div class="chat-message advert"><div class="chat-message-body"><strong>{0}:</strong><br><br> <strong>First Name:</strong> {1} <br><strong>Last Name:</strong> {2} <br><strong>Birth Date:</strong> {3} <br><strong>Licenses:</strong> {4}</div></div>',
+--					args = {
+--						"Drivers License",
+--						item.info.firstname,
+--						item.info.lastname,
+--						item.info.birthdate,
+--						item.info.type
+--					}
+--				}
+--			)
+--		end
+--	end
+--end)
 
-QBCore.Functions.CreateUseableItem("id_card", function(source, item)
-	local PlayerPed = GetPlayerPed(source)
-	local PlayerCoords = GetEntityCoords(PlayerPed)
-	for k, v in pairs(QBCore.Functions.GetPlayers()) do
-		local TargetPed = GetPlayerPed(v)
-		local dist = #(PlayerCoords - GetEntityCoords(TargetPed))
-		if dist < 3.0 then
-			local gender = "Man"
-			if item.info.gender == 1 then
-				gender = "Woman"
-			end
-			TriggerClientEvent('chat:addMessage', v,  {
-					template = '<div class="chat-message advert"><div class="chat-message-body"><strong>{0}:</strong><br><br> <strong>Civ ID:</strong> {1} <br><strong>First Name:</strong> {2} <br><strong>Last Name:</strong> {3} <br><strong>Birthdate:</strong> {4} <br><strong>Gender:</strong> {5} <br><strong>Nationality:</strong> {6}</div></div>',
-					args = {
-						"ID Card",
-						item.info.citizenid,
-						item.info.firstname,
-						item.info.lastname,
-						item.info.birthdate,
-						gender,
-						item.info.nationality
-					}
-				}
-			)
-		end
-	end
-end)
+--QBCore.Functions.CreateUseableItem("id_card", function(source, item)
+--	local PlayerPed = GetPlayerPed(source)
+--	local PlayerCoords = GetEntityCoords(PlayerPed)
+--	for k, v in pairs(QBCore.Functions.GetPlayers()) do
+--		local TargetPed = GetPlayerPed(v)
+--		local dist = #(PlayerCoords - GetEntityCoords(TargetPed))
+--		if dist < 3.0 then
+--			local gender = "Man"
+--			if item.info.gender == 1 then
+--				gender = "Woman"
+--			end
+--			TriggerClientEvent('chat:addMessage', v,  {
+--					template = '<div class="chat-message advert"><div class="chat-message-body"><strong>{0}:</strong><br><br> <strong>Civ ID:</strong> {1} <br><strong>First Name:</strong> {2} <br><strong>Last Name:</strong> {3} <br><strong>Birthdate:</strong> {4} <br><strong>Gender:</strong> {5} <br><strong>Nationality:</strong> {6}</div></div>',
+--					args = {
+--						"ID Card",
+--						item.info.citizenid,
+--						item.info.firstname,
+--						item.info.lastname,
+--						item.info.birthdate,
+--						gender,
+--						item.info.nationality
+--					}
+--				}
+--			)
+--		end
+--	end
+--end)
