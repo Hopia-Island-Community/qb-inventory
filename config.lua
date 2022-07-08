@@ -325,7 +325,7 @@ Config.AttachmentCrafting = {
     }
 }
 
-MaxInventorySlots = 41
+MaxInventorySlots = 20
 
 BackEngineVehicles = {
     [`ninef`] = true,
