@@ -1284,7 +1284,7 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
 					itemData.info.serie = tostring(QBCore.Shared.RandomInt(2) .. QBCore.Shared.RandomStr(3) .. QBCore.Shared.RandomInt(1) .. QBCore.Shared.RandomStr(2) .. QBCore.Shared.RandomInt(3) .. QBCore.Shared.RandomStr(4))
 					Player.Functions.AddItem(itemData.name, 1, toSlot, itemData.info)
 					TriggerClientEvent('qb-drugs:client:updateDealerItems', src, itemData, 1)
-					TriggerClientEvent('QBCore:Notify', src, itemInfo["label"] .. " bought!", "success")
+					TriggerClientEvent('QBCore:Notify', src, "Achat : " ..itemInfo["label"] .. " !", "success")
 					TriggerEvent("qb-log:server:CreateLog", "dealers", "Dealer item bought", "green", "**"..GetPlayerName(src) .. "** bought a " .. itemInfo["label"] .. " for $"..price)
 				else
 					TriggerClientEvent('QBCore:Notify', src, "You don\'t have enough cash..", "error")
@@ -1306,7 +1306,7 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
                 end
 				Player.Functions.AddItem(itemData.name, fromAmount, toSlot, itemData.info)
 				TriggerClientEvent('qb-shops:client:UpdateShop', src, QBCore.Shared.SplitStr(shopType, "_")[2], itemData, fromAmount)
-				TriggerClientEvent('QBCore:Notify', src, itemInfo["label"] .. " bought!", "success")
+				TriggerClientEvent('QBCore:Notify', src, "Achat : " ..itemInfo["label"] .. " !", "success")
 				TriggerEvent("qb-log:server:CreateLog", "shops", "Shop item bought", "green", "**"..GetPlayerName(src) .. "** bought a " .. itemInfo["label"] .. " for $"..price)
 			elseif bankBalance >= price then
 				Player.Functions.RemoveMoney("bank", price, "itemshop-bought-item")
@@ -1315,23 +1315,23 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
                 end
 				Player.Functions.AddItem(itemData.name, fromAmount, toSlot, itemData.info)
 				TriggerClientEvent('qb-shops:client:UpdateShop', src, QBCore.Shared.SplitStr(shopType, "_")[2], itemData, fromAmount)
-				TriggerClientEvent('QBCore:Notify', src, itemInfo["label"] .. " bought!", "success")
+				TriggerClientEvent('QBCore:Notify', src, "Achat : " ..itemInfo["label"] .. " !", "success")
 				TriggerEvent("qb-log:server:CreateLog", "shops", "Shop item bought", "green", "**"..GetPlayerName(src) .. "** bought a " .. itemInfo["label"] .. " for $"..price)
 			else
-				TriggerClientEvent('QBCore:Notify', src, "You don't have enough cash..", "error")
+				TriggerClientEvent('QBCore:Notify', src, "T'as pas assez de cash..", "error")
 			end
 		else
 			if Player.Functions.RemoveMoney("cash", price, "unkown-itemshop-bought-item") then
 				Player.Functions.AddItem(itemData.name, fromAmount, toSlot, itemData.info)
-				TriggerClientEvent('QBCore:Notify', src, itemInfo["label"] .. " bought!", "success")
+				TriggerClientEvent('QBCore:Notify', src, "Achat : " ..itemInfo["label"] .. " !", "success")
 				TriggerEvent("qb-log:server:CreateLog", "shops", "Shop item bought", "green", "**"..GetPlayerName(src) .. "** bought a " .. itemInfo["label"] .. " for $"..price)
 			elseif bankBalance >= price then
 				Player.Functions.RemoveMoney("bank", price, "unkown-itemshop-bought-item")
 				Player.Functions.AddItem(itemData.name, fromAmount, toSlot, itemData.info)
-				TriggerClientEvent('QBCore:Notify', src, itemInfo["label"] .. " bought!", "success")
+				TriggerClientEvent('QBCore:Notify', src, "Achat : " ..itemInfo["label"] .. " !", "success")
 				TriggerEvent("qb-log:server:CreateLog", "shops", "Shop item bought", "green", "**"..GetPlayerName(src) .. "** bought a " .. itemInfo["label"] .. " for $"..price)
 			else
-				TriggerClientEvent('QBCore:Notify', src, "You don\'t have enough cash..", "error")
+				TriggerClientEvent('QBCore:Notify', src, "T'as pas assez de cash..", "error")
 			end
 		end
 	elseif fromInventory == "crafting" then
@@ -1348,7 +1348,7 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
 			TriggerClientEvent("inventory:client:CraftAttachment", src, itemData.name, itemData.costs, fromAmount, toSlot, itemData.points)
 		else
 			TriggerClientEvent("inventory:client:UpdatePlayerInventory", src, true)
-			TriggerClientEvent('QBCore:Notify', src, "You don't have the right items..", "error")
+			TriggerClientEvent('QBCore:Notify', src, "T'as pas les bons objets..", "error")
 		end
 	else
 		-- drop

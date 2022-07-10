@@ -2807,11 +2807,11 @@ var requiredItemOpen = false;
         if (itemBoxtimer !== null) {
             clearTimeout(itemBoxtimer);
         }
-        var type = "Used";
+        var type = "Utilisé";
         if (data.type == "add") {
-            type = "Received";
+            type = "Reçu";
         } else if (data.type == "remove") {
-            type = "Removed";
+            type = "Retiré";
         }
 
         var $itembox = $(".itembox-container.template").clone();
