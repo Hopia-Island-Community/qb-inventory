@@ -452,6 +452,9 @@ function FormatItemInfo(itemData) {
                 "<p>" + itemData.info.vehplate + "</p>" +
 				"<p>" + itemData.info.veh + "</p>"
             );
+        } else if (itemData.type == "clothes") {
+            $(".item-info-title").html(" " + itemData.label + " ");
+            $(".item-info-description").html( "Item number: " + itemData.info.Drawable + "Texture: " + itemData.info.Texture + " " );
         } else if (itemData.type == "weapon") {
             $(".item-info-title").html("<p>" + itemData.label + "</p>");
             if (itemData.info.ammo == undefined) {
