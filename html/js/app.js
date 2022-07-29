@@ -546,33 +546,33 @@ function FormatItemInfo(itemData) {
                     "</p>"
                 );
             }
-        }	else if (itemData.name == "bass") {
-            $(".item-info-title").html('<p>' + itemData.label + '</p>')
-            $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
-        } else if (itemData.name == "stingray") {
-            $(".item-info-title").html('<p>' + itemData.label + '</p>')
-            $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
-        } else if (itemData.name == "flounder") {
-            $(".item-info-title").html('<p>' + itemData.label + '</p>')
-            $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
-        } else if (itemData.name == "codfish") {
-            $(".item-info-title").html('<p>' + itemData.label + '</p>')
-            $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
-        } else if (itemData.name == "mackerel") {
-            $(".item-info-title").html('<p>' + itemData.label + '</p>')
-            $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
-        } else if (itemData.name == "dolphin") {
-            $(".item-info-title").html('<p>' + itemData.label + '</p>')
-            $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
-        } else if (itemData.name == "sharkhammer") {
-            $(".item-info-title").html('<p>' + itemData.label + '</p>')
-            $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
-        } else if (itemData.name == "sharktiger") {
-            $(".item-info-title").html('<p>' + itemData.label + '</p>')
-            $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
-        } else if (itemData.name == "killerwhale") {
-            $(".item-info-title").html('<p>' + itemData.label + '</p>')
-            $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
+        // }	else if (itemData.name == "bass") {
+        //     $(".item-info-title").html('<p>' + itemData.label + '</p>')
+        //     $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
+        // } else if (itemData.name == "stingray") {
+        //     $(".item-info-title").html('<p>' + itemData.label + '</p>')
+        //     $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
+        // } else if (itemData.name == "flounder") {
+        //     $(".item-info-title").html('<p>' + itemData.label + '</p>')
+        //     $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
+        // } else if (itemData.name == "codfish") {
+        //     $(".item-info-title").html('<p>' + itemData.label + '</p>')
+        //     $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
+        // } else if (itemData.name == "mackerel") {
+        //     $(".item-info-title").html('<p>' + itemData.label + '</p>')
+        //     $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
+        // } else if (itemData.name == "dolphin") {
+        //     $(".item-info-title").html('<p>' + itemData.label + '</p>')
+        //     $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
+        // } else if (itemData.name == "sharkhammer") {
+        //     $(".item-info-title").html('<p>' + itemData.label + '</p>')
+        //     $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
+        // } else if (itemData.name == "sharktiger") {
+        //     $(".item-info-title").html('<p>' + itemData.label + '</p>')
+        //     $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
+        // } else if (itemData.name == "killerwhale") {
+        //     $(".item-info-title").html('<p>' + itemData.label + '</p>')
+        //     $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
         } else if (itemData.name == "fishicebox") {
             $(".item-info-title").html('<p>' + itemData.label + ' ' + itemData.info.boxid + '</p>')
             $(".item-info-description").html('<p><strong>Propriétaire de la boîte : </strong><span>' + itemData.info.boxOwner + '</span></p> Boîte frigorifique pour stocker les poissons');
