@@ -885,64 +885,64 @@ CreateThread(function()
     end
 end)
 
-CreateThread(function()
-    if Config.UseTarget then
-        exports['qb-target']:AddTargetModel(Config.CraftingObject, {
-            options = {
-                {
-                    event = "inventory:client:craftTarget",
-                    icon = "fas fa-tools",
-                    label = "Craft",
-                },
-            },
-            distance = 2.5,
-        })
-    else
-        while true do
-            local sleep = 1000
-            if LocalPlayer.state['isLoggedIn'] then
-                local pos = GetEntityCoords(PlayerPedId())
-                local craftObject = GetClosestObjectOfType(pos, 2.0, Config.CraftingObject, false, false, false)
-                if craftObject ~= 0 then
-                    local objectPos = GetEntityCoords(craftObject)
-                    if #(pos - objectPos) < 1.5 then
-                        sleep = 0
-                        DrawText3Ds(objectPos.x, objectPos.y, objectPos.z + 1.0, "~g~E~w~ - Craft")
-                        if IsControlJustReleased(0, 38) then
-                            local crafting = {}
-                            crafting.label = "Crafting"
-                            crafting.items = GetThresholdItems()
-                            TriggerServerEvent("inventory:server:OpenInventory", "crafting", math.random(1, 99), crafting)
-                            sleep = 100
-                        end
-                    end
-                end
-            end
-            Wait(sleep)
-        end
-    end
-end)
-
-CreateThread(function()
-    while true do
-        local sleep = 1000
-        if LocalPlayer.state['isLoggedIn'] then
-            local pos = GetEntityCoords(PlayerPedId())
-            local distance = #(pos - Config.AttachmentCraftingLocation)
-            if distance < 10 then
-                if distance < 1.5 then
-                    sleep = 0
-                    DrawText3Ds(Config.AttachmentCraftingLocation.x, Config.AttachmentCraftingLocation.y, Config.AttachmentCraftingLocation.z, "~g~E~w~ - Craft")
-                    if IsControlJustPressed(0, 38) then
-                        local crafting = {}
-                        crafting.label = "Attachment Crafting"
-                        crafting.items = GetAttachmentThresholdItems()
-                        TriggerServerEvent("inventory:server:OpenInventory", "attachment_crafting", math.random(1, 99), crafting)
-                        sleep = 100
-                    end
-                end
-            end
-        end
-        Wait(sleep)
-    end
-end)
+--CreateThread(function()
+--    if Config.UseTarget then
+--        exports['qb-target']:AddTargetModel(Config.CraftingObject, {
+--            options = {
+--                {
+--                    event = "inventory:client:craftTarget",
+--                    icon = "fas fa-tools",
+--                    label = "Craft",
+--                },
+--            },
+--            distance = 2.5,
+--        })
+--    else
+--        while true do
+--            local sleep = 1000
+--            if LocalPlayer.state['isLoggedIn'] then
+--                local pos = GetEntityCoords(PlayerPedId())
+--                local craftObject = GetClosestObjectOfType(pos, 2.0, Config.CraftingObject, false, false, false)
+--                if craftObject ~= 0 then
+--                    local objectPos = GetEntityCoords(craftObject)
+--                    if #(pos - objectPos) < 1.5 then
+--                        sleep = 0
+--                        DrawText3Ds(objectPos.x, objectPos.y, objectPos.z + 1.0, "~g~E~w~ - Craft")
+--                        if IsControlJustReleased(0, 38) then
+--                            local crafting = {}
+--                            crafting.label = "Crafting"
+--                            crafting.items = GetThresholdItems()
+--                            TriggerServerEvent("inventory:server:OpenInventory", "crafting", math.random(1, 99), crafting)
+--                            sleep = 100
+--                        end
+--                    end
+--                end
+--            end
+--            Wait(sleep)
+--        end
+--    end
+--end)
+--
+--CreateThread(function()
+--    while true do
+--        local sleep = 1000
+--        if LocalPlayer.state['isLoggedIn'] then
+--            local pos = GetEntityCoords(PlayerPedId())
+--            local distance = #(pos - Config.AttachmentCraftingLocation)
+--            if distance < 10 then
+--                if distance < 1.5 then
+--                    sleep = 0
+--                    DrawText3Ds(Config.AttachmentCraftingLocation.x, Config.AttachmentCraftingLocation.y, Config.AttachmentCraftingLocation.z, "~g~E~w~ - Craft")
+--                    if IsControlJustPressed(0, 38) then
+--                        local crafting = {}
+--                        crafting.label = "Attachment Crafting"
+--                        crafting.items = GetAttachmentThresholdItems()
+--                        TriggerServerEvent("inventory:server:OpenInventory", "attachment_crafting", math.random(1, 99), crafting)
+--                        sleep = 100
+--                    end
+--                end
+--            end
+--        end
+--        Wait(sleep)
+--    end
+--end)
