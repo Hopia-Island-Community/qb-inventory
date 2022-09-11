@@ -2878,7 +2878,7 @@ var requiredItemOpen = false;
                 $(".requiredItem-container").html("");
                 $.each(data.items, function(index, item) {
                     var element =
-                        '<div class="requiredItem-box"><div id="requiredItem-action">Required</div><div id="requiredItem-label"><p>' +
+                        '<div class="requiredItem-box"><div id="requiredItem-action">Requis</div><div id="requiredItem-label"><p>' +
                         item.label +
                         '</p></div><div id="requiredItem-image"><div class="item-slot-img"><img src="images/' +
                         item.image +
