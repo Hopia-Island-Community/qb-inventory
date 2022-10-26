@@ -446,6 +446,15 @@ function FormatItemInfo(itemData) {
             $(".item-info-description").html(
                 "<p>" + itemData.info.uses + " uses left.</p>"
             );
+            } else if (itemData.name == "mechboard") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            $(".item-info-description").html(
+                "<p>" + itemData.info.vehplate + "</p>" +
+				"<p>" + itemData.info.veh + "</p>"
+            );
+        } else if (itemData.type == "clothes") {
+            $(".item-info-title").html(" " + itemData.label + " ");
+            $(".item-info-description").html( "Item number: " + itemData.info.Drawable + "Texture: " + itemData.info.Texture + " " );
         } else if (itemData.type == "weapon") {
             $(".item-info-title").html("<p>" + itemData.label + "</p>");
             if (itemData.info.ammo == undefined) {
@@ -537,6 +546,36 @@ function FormatItemInfo(itemData) {
                     "</p>"
                 );
             }
+        // }	else if (itemData.name == "bass") {
+        //     $(".item-info-title").html('<p>' + itemData.label + '</p>')
+        //     $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
+        // } else if (itemData.name == "stingray") {
+        //     $(".item-info-title").html('<p>' + itemData.label + '</p>')
+        //     $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
+        // } else if (itemData.name == "flounder") {
+        //     $(".item-info-title").html('<p>' + itemData.label + '</p>')
+        //     $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
+        // } else if (itemData.name == "codfish") {
+        //     $(".item-info-title").html('<p>' + itemData.label + '</p>')
+        //     $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
+        // } else if (itemData.name == "mackerel") {
+        //     $(".item-info-title").html('<p>' + itemData.label + '</p>')
+        //     $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
+        // } else if (itemData.name == "dolphin") {
+        //     $(".item-info-title").html('<p>' + itemData.label + '</p>')
+        //     $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
+        // } else if (itemData.name == "sharkhammer") {
+        //     $(".item-info-title").html('<p>' + itemData.label + '</p>')
+        //     $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
+        // } else if (itemData.name == "sharktiger") {
+        //     $(".item-info-title").html('<p>' + itemData.label + '</p>')
+        //     $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
+        // } else if (itemData.name == "killerwhale") {
+        //     $(".item-info-title").html('<p>' + itemData.label + '</p>')
+        //     $(".item-info-description").html('<p>Espèce : ' + itemData.info.species + '</p>Poids : ' + itemData.info.lbs + ' kg</p>Type: ' + itemData.info.type);
+        } else if (itemData.name == "fishicebox") {
+            $(".item-info-title").html('<p>' + itemData.label + ' ' + itemData.info.boxid + '</p>')
+            $(".item-info-description").html('<p><strong>Propriétaire de la boîte : </strong><span>' + itemData.info.boxOwner + '</span></p> Boîte frigorifique pour stocker les poissons');
         } else if (
             itemData.info.costs != undefined &&
             itemData.info.costs != null
@@ -2801,11 +2840,11 @@ var requiredItemOpen = false;
         if (itemBoxtimer !== null) {
             clearTimeout(itemBoxtimer);
         }
-        var type = "Used";
+        var type = "Utilisé";
         if (data.type == "add") {
-            type = "Received";
+            type = "Reçu";
         } else if (data.type == "remove") {
-            type = "Removed";
+            type = "Retiré";
         }
 
         var $itembox = $(".itembox-container.template").clone();
@@ -2839,7 +2878,7 @@ var requiredItemOpen = false;
                 $(".requiredItem-container").html("");
                 $.each(data.items, function(index, item) {
                     var element =
-                        '<div class="requiredItem-box"><div id="requiredItem-action">Required</div><div id="requiredItem-label"><p>' +
+                        '<div class="requiredItem-box"><div id="requiredItem-action">Requis</div><div id="requiredItem-label"><p>' +
                         item.label +
                         '</p></div><div id="requiredItem-image"><div class="item-slot-img"><img src="images/' +
                         item.image +

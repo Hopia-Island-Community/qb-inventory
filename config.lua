@@ -20,20 +20,20 @@ Config.BinObjects = {
     "prop_bin_05a",
 }
 
-Config.CraftingObject = `prop_toolchest_05`
+--Config.CraftingObject = `prop_toolchest_05`
 
 Config.VendingItem = {
     [1] = {
-        name = "kurkakola",
-        price = 4,
+        name = "cocacola",
+        price = 50,
         amount = 50,
         info = {},
         type = "item",
         slot = 1,
     },
     [2] = {
-        name = "water_bottle",
-        price = 4,
+        name = "water",
+        price = 50,
         amount = 50,
         info = {},
         type = "item",
@@ -42,7 +42,7 @@ Config.VendingItem = {
 }
 
 Config.CraftingItems = {
-    [1] = {
+    --[[ [1] = {
         name = "lockpick",
         amount = 50,
         info = {},
@@ -209,13 +209,13 @@ Config.CraftingItems = {
         slot = 12,
         threshold = 1750,
         points = 12,
-    },
+    }, ]]
 }
 
-Config.AttachmentCraftingLocation = vector3(88.91, 3743.88, 40.77)
+--Config.AttachmentCraftingLocation = vector3(88.91, 3743.88, 40.77)
 
 Config.AttachmentCrafting = {
-    ["items"] = {
+   --[[  ["items"] = {
         [1] = {
             name = "pistol_extendedclip",
             amount = 50,
@@ -330,7 +330,7 @@ Config.AttachmentCrafting = {
             threshold = 200,
             points = 8,
         },
-    }
+    } ]]
 }
 
 BackEngineVehicles = {
